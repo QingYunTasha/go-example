@@ -1,3 +1,3 @@
 # go-example
 
-test
+The go example code for some operations
