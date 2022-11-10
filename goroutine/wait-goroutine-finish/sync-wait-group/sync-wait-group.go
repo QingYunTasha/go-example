@@ -1,19 +1,18 @@
-package syncWaitGroup
+package main
 
-import(
+import (
 	"fmt"
-	"time"
 	"sync"
+	"time"
 )
 
-
-func Main(){
+func main() {
 	wg := new(sync.WaitGroup)
 	wg.Add(2)
 
 	go say("world", wg)
 	go say("hello", wg)
-	
+
 	wg.Wait()
 }
 

@@ -1,11 +1,11 @@
-package multiThread
+package main
 
 import (
 	"fmt"
 	"time"
 )
 
-func Main() {
+func main() {
 	go say("world")
 	say("hello")
 }

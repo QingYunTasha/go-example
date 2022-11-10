@@ -1,13 +1,16 @@
-package timeSleep
+package main
 
 import (
 	"fmt"
 	"time"
 )
 
-func Main() {
+// This method not ensure the finish
+func main() {
 	go say("world")
 	go say("hello")
+
+	time.Sleep(5 * time.Second)
 }
 
 func say(s string) {

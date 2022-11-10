@@ -1,14 +1,14 @@
-package raceCondition
+package main
 
 import (
-	"time"
 	"fmt"
+	"time"
 )
 
-func Main(){
+func main() {
 	total := 0
-	for i := 0; i < 1000; i++{
-		go func(){
+	for i := 0; i < 1000; i++ {
+		go func() {
 			total++
 		}()
 	}

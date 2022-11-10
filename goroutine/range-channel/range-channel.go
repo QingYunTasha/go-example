@@ -1,8 +1,8 @@
-package rangeChannel
+package main
 
 import "fmt"
 
-func Main() {
+func main() {
 	c := make(chan int, 10)
 	go func() {
 		for i := 0; i < 10; i++ {

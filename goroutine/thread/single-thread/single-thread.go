@@ -1,4 +1,4 @@
-package singleThread
+package main
 
 import (
 	"fmt"
@@ -12,7 +12,7 @@ func say(s string) {
 	}
 }
 
-func Main() {
+func main() {
 	say("hello")
 	say("world")
 }

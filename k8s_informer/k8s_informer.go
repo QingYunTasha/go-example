@@ -1,4 +1,4 @@
-package k8sinformer
+package main
 
 import (
 	"errors"
@@ -52,13 +52,19 @@ func main() {
 	}()
 
 	var res error
+	timeout := make(chan bool)
+	go func() {
+		time.Sleep(time.Second * 30)
+		timeout <- true
+	}()
+
 LOOP:
 	for {
 		select {
 		case <-successCh:
 			close(stopCh)
 			break LOOP
-		case <-time.After(time.Second * 30):
+		case <-timeout:
 			res = errors.New("delete job failed: timeout")
 			close(stopCh)
 			break LOOP

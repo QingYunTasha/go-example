@@ -1,4 +1,4 @@
-package syncMutex
+package main
 
 import (
 	"fmt"
@@ -7,21 +7,20 @@ import (
 )
 
 type safeNumber struct {
-	v   int
+	val int
 	mux sync.Mutex
 }
 
-func Main() {
-	total := safeNumber{v: 0}
+func main() {
+	total := safeNumber{val: 0}
 	for i := 0; i < 1000; i++ {
 		go func() {
 			total.mux.Lock()
-			total.v++
+			total.val++
 			total.mux.Unlock()
 		}()
 	}
 	time.Sleep(time.Second)
-	total.mux.Lock()
-	fmt.Println(total.v)
-	total.mux.Unlock()
+
+	fmt.Println(total.val)
 }

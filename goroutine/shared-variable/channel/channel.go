@@ -1,11 +1,11 @@
-package svChannel
+package main
 
 import (
 	"fmt"
 	"time"
 )
 
-func Main() {
+func main() {
 	total := 0
 	ch := make(chan int, 1)
 	ch <- total
