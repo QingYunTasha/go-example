@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {
 	parent()
-	fmt.Println("returned normally from parent")
+	fmt.Println("end")
 }
 
 func parent() {
