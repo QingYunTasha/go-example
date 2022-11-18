@@ -1,4 +1,6 @@
-func longestCommonSubsequence(text1 string, text2 string) int {
+package main
+
+func LongestCommonSubsequence(text1 string, text2 string) int {
 	m, n := len(text1), len(text2)
 	//2-d array
 	arr := make([][]int, m)
